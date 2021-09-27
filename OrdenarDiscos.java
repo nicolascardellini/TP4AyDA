@@ -1,3 +1,8 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package ordenardiscos;
 
 import java.util.Arrays;
@@ -21,7 +26,7 @@ public class OrdenarDiscos {
         //Algoritmo de ordenacion de discos con fuerza bruta
         for (int i = 0; i < discos.length / 2; i++) {
             for (int j = 0; j < discos.length - 1; j++) {
-                if (discos[j] != 'r' && discos[j + 1] != 'a') {
+                if (discos[j] == 'a' && discos[j + 1] == 'r') {
                     char aux = discos[j];
                     discos[j] = discos[j + 1];
                     discos[j + 1] = aux;
@@ -33,11 +38,10 @@ public class OrdenarDiscos {
     }
 
     public static void main(String[] args) {
-        char[] discos = {'a', 'r', 'a', 'r', 'a', 'r', 'a', 'r'};
+        char[] discos = {'a', 'r', 'a', 'r', 'a', 'r', 'a', 'r'}; //Arreglo de prueba
         System.out.println("Discos desordenados: " + Arrays.toString(discos));
         System.out.println("Discos ordenados: " + Arrays.toString(ordenarDiscos(discos)));
         System.out.println("Numero de permutaciones: " + count);
-
     }
 
 }
